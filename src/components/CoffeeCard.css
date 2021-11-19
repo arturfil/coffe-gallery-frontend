@@ -34,5 +34,6 @@
   display: flex;
   background-image: linear-gradient(90deg, rgb(230, 29, 46), rgb(243, 123, 11));
   border-radius: 25px;
+  font-weight: bold;
   border-color: transparent;
 }

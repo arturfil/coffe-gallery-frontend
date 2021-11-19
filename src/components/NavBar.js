@@ -5,7 +5,7 @@ import './NavBar.css';
 
 const NavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg">
+    <Navbar sticky="top" collapseOnSelect expand="lg">
       <Container>
         <Navbar.Brand>
           <Link to="/">
@@ -17,6 +17,8 @@ const NavBar = () => {
           <Nav className="me-auto links">
             <Link to="/">Home</Link>
             <Link to="/beans">Beans</Link>
+            <Link to="/beans">Add Coffee</Link>
+            <Link to="/beans">Add Bean</Link>
           </Nav>
           <Nav className="links">
             <Link to="/login">Login</Link>

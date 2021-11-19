@@ -25,21 +25,6 @@ const HomeView = () => {
               <CoffeeCard obj={coffee}/>
             </div>  
           ))}
-          {/* <div className="cardBox col-lg-4 col-md-6 col-sm-12">
-            <CoffeeCard />
-          </div>
-          <div className="cardBox col-lg-4 col-md-6 col-sm-12">
-            <CoffeeCard />
-          </div>
-          <div className="cardBox col-lg-4 col-md-6 col-sm-12">
-            <CoffeeCard />
-          </div>
-          <div className="cardBox col-lg-4 col-md-6 col-sm-12">
-            <CoffeeCard />
-          </div>
-          <div className="cardBox col-lg-4 col-md-6 col-sm-12">
-            <CoffeeCard />
-          </div> */}
         </div>
       </div>
     </div>

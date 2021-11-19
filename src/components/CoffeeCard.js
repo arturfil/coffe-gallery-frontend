@@ -10,7 +10,7 @@ const CoffeeCard = ({obj}) => {
     <Card style={{ width: "20rem" }}>
       <Card.Body>
         <Card.Title>{obj.name}</Card.Title>
-        <img className="coffeeCardImage" src={coffeeImage} alt="" />
+        <img className={"coffeeCardImage"} src={obj.image ? obj.image : coffeeImage} alt="" />
         <p>Grind Unit: {obj.grind}
           <br />
           Type of Bean{obj.bean.name}
