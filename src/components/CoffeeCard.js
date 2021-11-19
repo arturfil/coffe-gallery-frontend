@@ -11,8 +11,10 @@ const CoffeeCard = ({obj}) => {
       <Card.Body>
         <Card.Title>{obj.name}</Card.Title>
         <img className="coffeeCardImage" src={coffeeImage} alt="" />
-        <p>{obj.grind}</p>
-        <p>{obj.bean.name}</p>
+        <p>Grind Unit: {obj.grind}
+          <br />
+          Type of Bean{obj.bean.name}
+        </p>
         <Button className="buttonCard">Go somewhere</Button>
       </Card.Body>
     </Card>
