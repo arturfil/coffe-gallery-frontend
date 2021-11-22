@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
+import { deleteBeanInApi } from "../services/beanService";
 
 const BeansView = () => {
   const [beans, setBeans] = useState([]);
@@ -16,6 +17,14 @@ const BeansView = () => {
     setBeans(response.data);
   };
 
+  const deleteBean = (id) => {
+    const filtered = beans.filter((bean) => {
+      return bean._id !== id;
+    })
+    deleteBeanInApi(id);
+    setBeans(filtered);
+  }
+
   return (
     <div className="container mt-5">
       <Table striped bordered hover>
@@ -28,11 +37,15 @@ const BeansView = () => {
         </thead>
         <tbody>
           {beans.map((bean, i) => (
-            <tr>
+            <tr key={i}>
               <td>{i + 1}</td>
               <td>{bean.name}</td>
               <td>
-                <button className="btn btn-danger">Delete</button>
+                <button
+                  onClick={() => deleteBean(bean._id)} 
+                  className="btn btn-danger">
+                    Delete
+                </button>
               </td>
             </tr>
           ))}

@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import axios from 'axios';
+import { signUpUser } from '../services/authService';
 
 const Signup = () => {
-  const apiUrl = process.env.REACT_APP_API_URL;
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -18,7 +17,7 @@ const Signup = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const userResponse = await axios.post(`${apiUrl}/auth/signup`, user);
+    signUpUser(user);
     setUser({
       name: "",
       email: "",

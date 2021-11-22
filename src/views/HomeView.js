@@ -1,24 +1,26 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios';
 import CoffeeCard from '../components/CoffeeCard'
+import { getAllCoffees } from '../services/coffeeService';
 
 const HomeView = () => {
-  const [coffees, setCoffees] = useState([])
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const [coffees, setCoffees] = useState([]);
 
   useEffect(() => {
     getCoffee();
   }, [])
 
   const getCoffee = async () => {
-    const response = await axios.get(`${apiUrl}/coffees`);
-    setCoffees(response.data);  
+    const response = await getAllCoffees();
+      setCoffees(response.data);  
   }
 
   return (
     <div className="container mt-5">
       <h2>Home View</h2>      
       <div className="container">
+        { coffees.length === 0 && (
+          <h2>No Coffees Added Yet</h2>
+        )}
         <div className="row coffeeCards">
           { coffees.map(coffee => (
             <div key={coffee._id} className="cardBox col-lg-4 col-md-6 col-sm-12">

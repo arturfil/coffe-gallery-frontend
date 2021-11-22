@@ -20,7 +20,12 @@ const LoginView = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const userResponse = await loginUserToApi(user);
+    try {
+      const userResponse = await loginUserToApi(user);
+    } catch (error) {
+      console.log(error);
+    }
+      
     setUser({
       email: "",
       password: ""

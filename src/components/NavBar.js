@@ -17,8 +17,8 @@ const NavBar = () => {
           <Nav className="me-auto links">
             <Link to="/">Home</Link>
             <Link to="/beans">Beans</Link>
-            <Link to="/beans">Add Coffee</Link>
-            <Link to="/beans">Add Bean</Link>
+            <Link to="/addCoffee">Add Coffee</Link>
+            <Link to="/addBean">Add Bean</Link>
           </Nav>
           <Nav className="links">
             <Link to="/login">Login</Link>
