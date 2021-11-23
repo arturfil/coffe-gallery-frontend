@@ -7,7 +7,6 @@ const EditCoffeeView = () => {
   const [coffee, setCoffee] = useState({});
   const [beans, setBeans] = useState([]);
   const { id } = useParams();
-  const [preview, setPreview] = useState("");
 
   useEffect(() => {
     getCoffee();
@@ -55,7 +54,7 @@ const EditCoffeeView = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-6">
+        <div className="col-lg-6 col-md-6 col-sm-12">
           <form className="form">
             <h2>Edit Coffee</h2>
             <label>Name </label>
@@ -133,8 +132,8 @@ const EditCoffeeView = () => {
             </button>
           </form>
         </div>
-        <div className="col-6">
-          <img style={{marginTop: '40px', width: '500px'}} src={coffee.image} alt="" srcset="" />
+        <div className="col-lg-6 col-md-6 col-sm-12">
+          <img style={{marginTop: '40px', width: '400px'}} src={coffee.image} alt="" />
         </div>
       </div>
     </div>

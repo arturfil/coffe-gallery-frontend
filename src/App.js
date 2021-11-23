@@ -9,7 +9,8 @@ import BeansView from './views/BeansView';
 import SignupView from './views/SignupView';
 import LoginView from './views/LoginView';
 import AddCoffeeView from './views/AddCoffeeView';
-// import AuthRoute from './components/AuthRoute';
+import AuthRoute from './components/AuthRoute';
+import AdminRoute from './components/AdminRoute';
 import AddBeanView from './views/AddBeanView';
 import EditCoffeeView from './views/EditCoffeeView';
 
@@ -21,11 +22,17 @@ function App() {
         <Route path="/" element={<HomeView/>} />
         <Route path="/signup" element={<SignupView/>} />
         <Route path="/login" element={<LoginView/> } />
-        <Route path="/addCoffee" element={<AddCoffeeView/>} />
-        <Route path="/addBean" element={<AddBeanView/>} />
-        <Route path="/editCoffee/:id" element={<EditCoffeeView/> } />
-        <Route path="/beans" element={<BeansView/>} />
-        <Route path="/coffee/:id" element={ <CoffeeDetailsView /> } />
+        {/* Admin routes */}
+        <Route element={<AdminRoute/>}>
+          <Route exact path="/addBean" element={<AddBeanView/>} />
+          <Route path="/addCoffee" element={<AddCoffeeView/>} />
+          <Route path="/beans" element={<BeansView/>} />
+          <Route path="/editCoffee/:id" element={<EditCoffeeView/> } />
+        </Route>
+        {/* Authenticted User */}
+        <Route element={<AuthRoute/>}>
+          <Route path="/coffee/:id" element={ <CoffeeDetailsView /> } />
+        </Route>
       </Routes>
     </>     
   );

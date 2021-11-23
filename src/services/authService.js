@@ -1,8 +1,7 @@
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
-// const navigate = useNavigate();
 const apiUrl = process.env.REACT_APP_API_URL;
+const tokenString = "jwtcoffeegallery";
 
 // POST/Login
 export const loginUserToApi = async (user) => {
@@ -10,20 +9,20 @@ export const loginUserToApi = async (user) => {
   try {
     console.log(response.data);
     if (response.data) {
-      const { _id, role,  } = response.data;
-      localStorage.setItem("jwtcoffeegallery", JSON.stringify({id: _id, role}));
+      const { _id, role, name  } = response.data;
+      localStorage.setItem(tokenString, JSON.stringify({id: _id, role, name}));
     }
-    // navigate("/")
+    navigate("/")
   } catch (error) {
     console.log(error);
   }
+  window.location.reload();
   return response;
 }
 
 // POST/Signup
 export const signUpUser = async (user) => {
   const response = await axios.post(`${apiUrl}/auth/signup`, user);
-  // navigate("/signup")
   return response;
 }
 
@@ -32,8 +31,13 @@ export const isAuthenticated = () => {
   if (typeof window == 'undefined') {
     return false;
   }
-  if (localStorage.getItem('jwtcoffeegallery')) {
-    return JSON.parse(localStorage.getItem("jwtcoffeegallery"));
+  if (localStorage.getItem(tokenString)) {
+    return JSON.parse(localStorage.getItem(tokenString));
   }
   return false;
+}
+
+export const logOut = () => {
+  localStorage.removeItem(tokenString);
+  window.location.reload();
 }

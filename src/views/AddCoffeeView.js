@@ -49,8 +49,8 @@ const AddCoffeeView = () => {
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-6">
+      <div className="row" style={{margin: '0 auto'}}>
+        <div className="col-lg-6 col-md-6 col-sm-12">
           <form className="form">
             <h2>Add New Coffee</h2>
             <input
@@ -117,8 +117,8 @@ const AddCoffeeView = () => {
             </button>
           </form>
         </div>
-        <div  className="col-6">
-          <img style={{height: '300px', marginTop: '40px'}} src={preview} />
+        <div  className="col-lg-6 col-md-6 col-sm-12">
+          <img style={{height: '300px', margin: '40px auto 40px auto', display: 'flex'}} src={preview} />
         </div>
       </div>
     </div>
