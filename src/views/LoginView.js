@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import { loginUserToApi } from '../services/authService';
 
 import './Form.css'
 
 const LoginView = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState(
     {
       email: "",
@@ -22,6 +24,8 @@ const LoginView = () => {
     event.preventDefault();
     try {
       const userResponse = await loginUserToApi(user);
+      navigate("/");
+      await window.location.reload();
     } catch (error) {
       console.log(error);
     }

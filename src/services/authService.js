@@ -12,11 +12,9 @@ export const loginUserToApi = async (user) => {
       const { _id, role, name  } = response.data;
       localStorage.setItem(tokenString, JSON.stringify({id: _id, role, name}));
     }
-    navigate("/")
   } catch (error) {
     console.log(error);
   }
-  window.location.reload();
   return response;
 }
 

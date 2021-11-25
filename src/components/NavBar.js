@@ -8,7 +8,7 @@ const NavBar = () => {
   const user = isAuthenticated(); // set user = userObject
 
   return (
-    <Navbar sticky="top" collapseOnSelect expand="lg">
+    <Navbar sticky="top" collapseOnSelect expand="lg" variant="dark">
       <Container>
         <Navbar.Brand>
           <Link to="/">Coffee Gallery</Link>

@@ -28,10 +28,10 @@ const HomeView = () => {
   return (
     <div className="container mt-5">
       <div className="row">
-        <div className="col-6">
+        <div className="col-md-6 col-sm-6">
           <h2>Home View</h2>
         </div>
-        <div className="col-3">
+        <div className="col-md-3 col-sm-6 mb-3">
           <input
             className="form-control"
             onChange={handleSearch}
@@ -40,7 +40,7 @@ const HomeView = () => {
             placeholder="Search"
           />
         </div>
-        <div className="col-3">
+        <div className="col-md-3 col-sm-6">
           <button onClick={resetCoffees} className="btn btn-outline-dark">reset</button>
         </div>
       </div>

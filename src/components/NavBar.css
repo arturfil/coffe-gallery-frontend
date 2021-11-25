@@ -2,6 +2,10 @@
   background-image: linear-gradient(90deg, rgb(230, 29, 46), rgb(243, 123, 11));
 }
 
+ .collapsed {
+  color: white!important;
+}
+
 .links a {
   margin-right: 10px;
   color: white;
