@@ -8,14 +8,10 @@ const coffeeImage = "https://static.wixstatic.com/media/c4bc6c_bb5653f74f4c4c5a8
 
 const CoffeeCard = ({obj}) => {
   return (
-    <Card style={{ width: "22rem" }}>
+    <Card style={{ width: "15rem" }}>
       <Card.Body>
         <Card.Title>{obj.name}</Card.Title>
-        <img className={"coffeeCardImage"} src={obj.image ? obj.image : coffeeImage} alt="" />
-        <p>Grind Unit: {obj.grind}
-          <br />
-          Type of Bean{obj.bean.name}
-        </p>
+        <img className="coffeeCardImage" src={obj.image ? obj.image : coffeeImage} alt="" />
         <Link to={`/coffee/${obj._id}`} className="buttonCard btn btn-primary">View More</Link>
       </Card.Body>
     </Card>

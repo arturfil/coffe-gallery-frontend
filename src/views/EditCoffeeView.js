@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router";
 import { getAllBeans } from "../services/beanService";
-import { deleteCoffeeInApi, getSingleCoffeeFromApi, imageUpload, imageUploadToApi, updateCoffeeInApi } from "../services/coffeeService";
+import { deleteCoffeeInApi, getSingleCoffeeFromApi, imageUploadToApi, updateCoffeeInApi } from "../services/coffeeService";
 
 const EditCoffeeView = () => {
   const [coffee, setCoffee] = useState({});
@@ -10,7 +10,6 @@ const EditCoffeeView = () => {
 
   useEffect(() => {
     getCoffee();
-    getBeans();
   }, []);
 
   const getCoffee = async () => {
