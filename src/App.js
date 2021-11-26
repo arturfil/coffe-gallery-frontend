@@ -22,6 +22,7 @@ function App() {
         <Route path="/" element={<HomeView/>} />
         <Route path="/signup" element={<SignupView/>} />
         <Route path="/login" element={<LoginView/> } />
+        <Route path="/coffee/:id" element={ <CoffeeDetailsView /> } />
         {/* Admin routes */}
         <Route element={<AdminRoute/>}>
           <Route exact path="/addBean" element={<AddBeanView/>} />
@@ -31,7 +32,7 @@ function App() {
         </Route>
         {/* Authenticted User */}
         <Route element={<AuthRoute/>}>
-          <Route path="/coffee/:id" element={ <CoffeeDetailsView /> } />
+          {/* Before the details coffee view was here but I believe it should be public */}
         </Route>
       </Routes>
     </>     

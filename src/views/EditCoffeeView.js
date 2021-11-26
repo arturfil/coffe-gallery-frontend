@@ -10,6 +10,7 @@ const EditCoffeeView = () => {
 
   useEffect(() => {
     getCoffee();
+    getBeans();
   }, []);
 
   const getCoffee = async () => {
