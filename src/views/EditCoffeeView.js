@@ -4,7 +4,13 @@ import { getAllBeans } from "../services/beanService";
 import { deleteCoffeeInApi, getSingleCoffeeFromApi, imageUploadToApi, updateCoffeeInApi } from "../services/coffeeService";
 
 const EditCoffeeView = () => {
-  const [coffee, setCoffee] = useState({});
+  const [coffee, setCoffee] = useState({
+      name: "",
+      bean: "",
+      roast: "",
+      grind: 0,
+      image: ""
+  });
   const [beans, setBeans] = useState([]);
   const { id } = useParams();
 
