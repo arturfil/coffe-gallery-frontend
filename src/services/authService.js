@@ -9,7 +9,7 @@ export const loginUserToApi = async (user) => {
   try {
     console.log(response.data);
     if (response.data) {
-      const { _id, role, name  } = response.data;
+      const { _id, role, name  } = response.data.user;
       localStorage.setItem(tokenString, JSON.stringify({id: _id, role, name}));
     }
   } catch (error) {
