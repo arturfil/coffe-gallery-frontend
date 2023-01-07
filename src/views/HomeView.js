@@ -19,7 +19,7 @@ const HomeView = () => {
       const response = await getAllCoffees();
       setCoffees(response.data);
       setLoading(false);
-    }, 2000)
+    }, 500)
   };
 
   const handleSearch = (event) => setSearch(event.target.value.toLowerCase());
